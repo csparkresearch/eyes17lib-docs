@@ -1,6 +1,22 @@
-.md-typeset h1,
+.md-typeset h1{
+  font-weight: bold;
+  color: teal;
+  font-size: 18pt;
+}
+
 .md-typeset h2 {
   font-weight: bold;
+  color: #8a43ab;
+  font-size: 16pt;
+}
+
+.md-typeset h3 {
+  font-weight: bold;
+  color: #3a636b;
+}
+
+.md-typeset pre > code {
+  font-size:11pt;
 }
 
 .superfences-tabs .highlight {

@@ -1,6 +1,6 @@
 
 
-## set_sine
+## set_sine : Set Sine Wave Frequency for WG, WGbar
 
 set frequency of sine wave on WG. Restores waveform type to sine if some other shape had
 been previously set. WGbar output will also output a sine wave which is 180 degrees out of
@@ -18,7 +18,7 @@ p.set_wave(100) # 100 Hz sine wave on WG
 
 ---
 
-## set_wave
+## set_wave : Set Frequency and type of WG waveform out
 
 set frequency of wave on WG. Also sets waveform type to 'sine'/'tria'.
 
@@ -35,7 +35,7 @@ p.set_wave(freq, 'sine')
 
 ---
 
-## set_sine_amp
+## set_sine_amp : Set Sine Wave Amplitude
 
 Set the amplitude of the waveform output on WG
 
@@ -52,7 +52,7 @@ p.set_sine_amp(2) #3.3 V amplitude. +/-3.3V swing
 
 ---
 
-## load_equation
+## load_equation : Load an arbitrary shape to WG using an equation
 
 `p.load_equation(self, function, span=None, **kwargs)`
 
@@ -90,7 +90,7 @@ p.load_equation('tria') # Changes waveform shape to triangle.
 
 ---
 
-## set_sq1
+## set_sq1 : Set Square Wave Frequency for SQ1
 `set_sqr1(self, freq, duty_cycle=50)`
 
 set frequency of square wave on SQ1. 
@@ -107,7 +107,7 @@ set frequency of square wave on SQ1.
 
 ---
 
-## set_sq2
+## set_sq2 : Set Square Wave Frequency for SQ2
 `set_sqr2(self, freq, duty_cycle=50)`
 
 set frequency of square wave on SQ2. 

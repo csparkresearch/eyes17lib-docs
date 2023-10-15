@@ -19,7 +19,7 @@ pip install eyes17lib
     Accessing the hardware on linux requires certain permissions to be set.
     Due to an apparent bug with pip3, the installation script may fail to do this. 
     For a permanent fix for regular users, please download and execute this
-    [post installation script](../assets/postinst.sh)
+    [post installation script](assets/postinst.sh)
 
     ```bash
     chmod +x postinst.sh
@@ -30,7 +30,7 @@ pip install eyes17lib
 
 
 !!! success
-    This should be sufficient, and you can now proceed to [using the library](../programming/intro)
+    This should be sufficient, and you can now proceed to [using the library](programming/intro)
 
 
 ## On Ubuntu:

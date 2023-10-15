@@ -1,5 +1,5 @@
 
-## Voltage Measurements
+## Single datapoints
 
 ### :material-flash-triangle-outline: get_voltage : Measure voltage 
 
@@ -89,7 +89,7 @@ and does not need to be called separately.
 
 <hr>
 
-## Synchronous capture routines
+## Multiple, Equidistant voltage acquisition: Synchronous routines
 
 These calls initiate an oscilloscope acquisition process, and wait for it
 to complete before returning the data in the form of arrays. 
@@ -403,7 +403,7 @@ p.select_range('A1',4)
 
 <hr>
 
-## Asynchronous capture routines
+## Multiple, Equidistant voltage acquisition: Asynchronous routines
 
 This sections lists separate function calls available for 
 

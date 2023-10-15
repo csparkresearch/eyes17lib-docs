@@ -51,6 +51,8 @@ markdown_extensions:
     - pymdownx.smartsymbols
     - pymdownx.superfences:
        preserve_tabs: true
+    - pymdownx.tabbed:
+       alternate_style: true
     - pymdownx.tasklist:
         custom_checkbox: True
     - pymdownx.tilde
@@ -68,7 +70,7 @@ plugins:
       exclude:
         - programming/intro.md#functions
    - table-reader
-   - pdf-export
+   #- pdf-export
    - with-pdf:
         author: Jithin BP
         #cover: false
@@ -131,13 +133,10 @@ nav:
       - 'Voltage Measurements': 'programming/analog.md'
       - 'Waveform Generators': 'programming/waveforms.md'
       - 'Capacitance/Resistance': 'programming/meters.md'
-      - 'Digital I/O': 'programming/digital.md'
-      - 'Timing Measurements': 'programming/timing.md'
-      - 'Oscilloscope': 'programming/capture.md'
-      - 'I2C and Sensors': 'programming/I2C.md'
+      - 'Digital I/O, Timing': 'programming/digital.md'
       - 'I2C and Sensors': 'programming/sensors.md'
   - Projects:
       - 'R2R DAC Wavegen': 'programming/r2r_wavegen.md'
       - 'Optics: Malus Law': 'malus.md'
-  - 2-Hour Tutorial: 'workshop.md'
+  - APT Workshop Schedule: 'workshop.md'
 

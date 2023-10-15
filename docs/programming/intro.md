@@ -37,85 +37,35 @@ Out[1]: <eyes17.eyes.Interface at 0x7fef91b95120>
 
 	```
 
----
-
-## Static Variables
-
-The instance `p` contains some static variables such as p.version . These are described here
-
-??? "Variable List"
-	+ connected: Boolean. Indicates the connection status
-	+ version : A version string read from the connected device. Such as EJ-5.1
-	+ version_number: Version Number
-	+ aboutArray : print(p.aboutArray) to find out
-	+ calibrated : Boolean. Indicates calibration status.
-	+ verbose : set to True to get more verbose information 
-	+ WaveType : Indicates if WG output is enabled to sine/tria/arbit shapes.
-	+ WaveMode : 'sine'/'tria'/'sqr2' . If sqr2 is enabled, WG output is disabled.
-	+ sinefreq : Last set Frequency of Wave output on WG
-	+ sqr1freq : Last set Frequency of Wave output on SQ1
-	+ sqr1dc : Last set Duty Cycle of Wave output on SQ1
-	+ sqr2freq : Last set Frequency of Wave output on SQ2
-	+ sqr2dc: Last set Duty Cycle of Wave output on WG
-
 
 ---
 
-## Submodules
+## Functions : Accessing the hardware
 
-Access to communication buses such as I2C, SPI are available as submodules of the variable `p` . e.g. `p.I2C.scan()` returns a list of addresses of sensors/devices connected to the I2C bus.
+[:material-waveform: Analog ](analog.md){ .md-button }
+[:material-sine-wave: Waveforms ](waveforms.md){ .md-button }
+[:material-square-wave: Digital](digital.md){ .md-button .secondary}
+[ Sensors](sensors.md){ .md-button }
 
-??? info "I2C : Access the I2C Communication bus"
-	+ config
-	+ start
-	+ stop
-	+ wait
-	+ send
-	+ send_burst
-	+ restart
-	+ simpleRead
-	+ read
-	+ read_repeat
-	+ read_end
-	+ read_status
-	+ readBulk
-	+ writeBulk
-	+ scan
-
-??? info "SPI : Access the SPI Communication bus"
-	+ set_parameters
-	+ start
-	+ set_cs
-	+ stop
-	+ send8
-	+ send16
-	+ send8_burst
-	+ send16_burst
-	+ xfer
-	+ map_reference_clock
-
----
-
-## Function calls
-
-[:material-sine-wave: Analog ](../analog){ .md-button }
-[:material-square-wave: Digital](../digital){ .md-button .secondary}
-[:material-water-off: Sensors ](../analog){ .md-button }
-
-- [x] [Analog Functions ](../analog): Voltages, Oscilloscope calls etc
+- [x] [Analog Functions ](analog.md): Voltages, Oscilloscope calls etc
     * [x] Voltage Measurement
     * [x] Capture calls
     * [x] Capture configuration such as trigger, select_range etc
     * [x] Code Examples
-- [x] [Waveform Generators](../waveforms): configure sine, triangle, square wave outputs 
+- [x] [Waveform Generators](waveforms.md): configure sine, triangle, square wave outputs 
     * [x] sine wave frequency, amplitude, shape configuration
     * [x] square wave 1,2 frequency, duty_cycle setting.
-- [x] [Capacitance, Resistance](../meters): 
+- [x] [Digital I/O, Timing](digital.md): Logic Levels, and Timing measurements 
+    * [x] read and set logic levels on digital pins
+    * [ ] timing measurements
+- [x] [Capacitance, Resistance](meters.md): 
     * [x] Measure Capacitance
     * [x] Measure Resistance
-- [x] [I2C Sensors](../sensors): Read data from sensors 
+- [x] [I2C Sensors](sensors.md): Read data from sensors 
+    * [x] I2C Function Calls
+    * [ ] Document Sensors
 
-### functions
+
 The following is an unsorted list. head over to relevant sections for detailed usage docs and examples
 
 ??? abstract "Function call summary"
@@ -189,6 +139,63 @@ The following is an unsorted list. head over to relevant sections for detailed u
 	| 	save	                         | 	save an array to a csv file	                                                                  |
 
 
+---
+
+## Static Variables
+
+The instance `p` contains some static variables such as p.version . These are described here
+
+??? "Variable List"
+	+ connected: Boolean. Indicates the connection status
+	+ version : A version string read from the connected device. Such as EJ-5.1
+	+ version_number: Version Number
+	+ aboutArray : print(p.aboutArray) to find out
+	+ calibrated : Boolean. Indicates calibration status.
+	+ verbose : set to True to get more verbose information 
+	+ WaveType : Indicates if WG output is enabled to sine/tria/arbit shapes.
+	+ WaveMode : 'sine'/'tria'/'sqr2' . If sqr2 is enabled, WG output is disabled.
+	+ sinefreq : Last set Frequency of Wave output on WG
+	+ sqr1freq : Last set Frequency of Wave output on SQ1
+	+ sqr1dc : Last set Duty Cycle of Wave output on SQ1
+	+ sqr2freq : Last set Frequency of Wave output on SQ2
+	+ sqr2dc: Last set Duty Cycle of Wave output on WG
+
+
+---
+
+
+## Submodules
+
+Access to communication buses such as I2C, SPI are available as submodules of the variable `p` . e.g. `p.I2C.scan()` returns a list of addresses of sensors/devices connected to the I2C bus.
+
+??? info "I2C : Access the [I2C Communication bus](sensors.md)"
+	+ config
+	+ start
+	+ stop
+	+ wait
+	+ send
+	+ send_burst
+	+ restart
+	+ simpleRead
+	+ read
+	+ read_repeat
+	+ read_end
+	+ read_status
+	+ readBulk
+	+ writeBulk
+	+ scan
+
+??? info "SPI : Access the SPI Communication bus"
+	+ set_parameters
+	+ start
+	+ set_cs
+	+ stop
+	+ send8
+	+ send16
+	+ send8_burst
+	+ send16_burst
+	+ xfer
+	+ map_reference_clock
 
 
 
