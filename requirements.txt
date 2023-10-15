@@ -5,5 +5,6 @@ mkdocs-material-extensions
 mkdocs-table-reader-plugin
 mkdocs-with-pdf
 mkdocs-exclude-search
+mkdocs-pdf-export-plugin
 pillow
 cairosvg

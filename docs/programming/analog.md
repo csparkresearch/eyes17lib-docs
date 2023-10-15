@@ -95,7 +95,7 @@ These calls initiate an oscilloscope acquisition process, and wait for it
 to complete before returning the data in the form of arrays. 
 
 !!! warning
-	The calls will block, and are not recommended in interactive graphical programs if you intend to record for periods longer than 100mS
+	These calls are blocking, and are not recommended in interactive graphical programs if you intend to record for periods longer than 100mS
 
 ### :material-sine-wave: capture1 : Single Channel Oscilloscope
 

@@ -31,5 +31,5 @@ Out[1]: <eyes17.eyes.Interface at 0x7fef91b95120>
 	will be set to False. After properly connecting, you can either recreate `p`, or call `p.__init__()`
 
 
-[Get PDF](/docs/document.pdf)
+[Get PDF](pdf/document.pdf)
 

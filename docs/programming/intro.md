@@ -105,12 +105,14 @@ Access to communication buses such as I2C, SPI are available as submodules of th
 - [x] [Analog Functions ](../analog): Voltages, Oscilloscope calls etc
     * [x] Voltage Measurement
     * [x] Capture calls
-    * [ ] Capture configuration such as trigger, select_range etc
-    * [ ] Code Examples
-- [x] [Digital Functions](../digital): control and measure digital input/output. set_state, timing functions etc 
-    * [x] Measure Frequency, duty cycles
-    * [x] Timing between different logic level changes. single as well as multiple inputs
-    * [ ] Configure digital output to trigger events, and measure time to logic level changes in inputs
+    * [x] Capture configuration such as trigger, select_range etc
+    * [x] Code Examples
+- [x] [Waveform Generators](../waveforms): configure sine, triangle, square wave outputs 
+    * [x] sine wave frequency, amplitude, shape configuration
+    * [x] square wave 1,2 frequency, duty_cycle setting.
+- [x] [Capacitance, Resistance](../meters): 
+    * [x] Measure Capacitance
+    * [x] Measure Resistance
 - [x] [I2C Sensors](../sensors): Read data from sensors 
 
 ### functions

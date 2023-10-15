@@ -59,7 +59,7 @@ markdown_extensions:
         emoji_generator: !!python/name:material.extensions.emoji.to_svg
 
 
-extra_css: ["assets/main.css","assets/styles.scss"]
+extra_css: ["assets/main.css"]
 site_favicon: 'images/favicon.ico'
 
 plugins:
@@ -68,6 +68,7 @@ plugins:
       exclude:
         - programming/intro.md#functions
    - table-reader
+   - pdf-export
    - with-pdf:
         author: Jithin BP
         #cover: false
