@@ -2,6 +2,20 @@ site_name: ExpEYES-17/SEELab3 Programmer's Manual
 
 theme:
   name: material
+  palette:
+    # Palette toggle for light mode
+    - scheme: default
+      primary: teal
+      accent: amber
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+
+    # Palette toggle for dark mode
+    - scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
   logo: images/eyes17-logo.png
   favicon: 'images/eyes17-logo.png'
   features:
@@ -70,7 +84,7 @@ plugins:
         #    - 'appendix/contribute/'
         #
         output_path: pdf/document.pdf
-        #enabled_if_env: PDF
+        enabled_if_env: PDF
         #
         #debug_html: true
         #show_anchors: true
