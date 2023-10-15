@@ -5,28 +5,30 @@
 ```
 py -3 -m pip install eyes17lib
 ```
+!!! warning ""
+    You will also need to install the driver for the USB communications chip. [Download](assets/mcp.zip), and install the relevant (x64 or x86) driver. You can also extract it and let windows search for the driver autmoatically in the location.
+
+---
 
 ### Linux
 ```
 pip install eyes17lib
 ```
 
-## Linux
+!!! warning ""
+    Accessing the hardware on linux requires certain permissions to be set.
+    Due to an apparent bug with pip3, the installation script may fail to do this. 
+    For a permanent fix for regular users, please download and execute this
+    [post installation script](../assets/postinst.sh)
 
-Accessing the hardware on linux requires certain permissions to be set.
-Due to an apparent bug with pip3, the install script may fail to do this.
-
-For a permanent fix for regular users, please download and execute this
-[post installation script](../assets/postinst.sh)
-
-```bash
-chmod +x postinst.sh
-sudo ./postinst.sh
-```
+    ```bash
+    chmod +x postinst.sh
+    sudo ./postinst.sh
+    ```
 
 *If this is too hard, please install the deb file linked in the following section*
 
----
+
 !!! success
     This should be sufficient, and you can now proceed to [using the library](../programming/intro)
 
@@ -42,6 +44,8 @@ sudo ./postinst.sh
 + sudo apt install eyes17
 
 This will install the library as well as the graphical interface for eyes17 
+
+---
 
 ## Installing on windows.
 

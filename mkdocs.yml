@@ -64,6 +64,9 @@ site_favicon: 'images/favicon.ico'
 
 plugins:
    - search
+   - exclude-search:
+      exclude:
+        - programming/intro.md#functions
    - table-reader
    - with-pdf:
         author: Jithin BP
@@ -125,6 +128,7 @@ nav:
   - Python - Functions:
       - 'Introduction': 'programming/intro.md'
       - 'Voltage Measurements': 'programming/analog.md'
+      - 'Waveform Generators': 'programming/waveforms.md'
       - 'Capacitance/Resistance': 'programming/meters.md'
       - 'Digital I/O': 'programming/digital.md'
       - 'Timing Measurements': 'programming/timing.md'

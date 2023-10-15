@@ -4,5 +4,6 @@ mkdocs-gen-files
 mkdocs-material-extensions
 mkdocs-table-reader-plugin
 mkdocs-with-pdf
+mkdocs-exclude-search
 pillow
 cairosvg
