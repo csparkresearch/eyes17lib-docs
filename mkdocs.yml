@@ -5,8 +5,6 @@ theme:
   logo: images/eyes17-logo.png
   favicon: 'images/eyes17-logo.png'
   features:
-    - content.action.edit
-    - content.action.view
     - navigation.footer
     - content.code.copy
   icon:
@@ -72,7 +70,7 @@ plugins:
         #    - 'appendix/contribute/'
         #
         output_path: pdf/document.pdf
-        enabled_if_env: PDF
+        #enabled_if_env: PDF
         #
         #debug_html: true
         #show_anchors: true
