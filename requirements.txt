@@ -1,0 +1,6 @@
+mkdocs
+mkdocs-material
+mkdocs-gen-files
+mkdocs-material-extensions
+mkdocs-table-reader-plugin
+mkdocs-with-pdf
