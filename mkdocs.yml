@@ -77,7 +77,7 @@ plugins:
         #debug_html: true
         #show_anchors: true
         #verbose: true  
-   - social:
+   - material/social:
       cards: true
       cards_font: Roboto
 
