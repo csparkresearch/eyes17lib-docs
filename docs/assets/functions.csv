@@ -5,28 +5,9 @@
 |,guess_sensor,|,"scans the I2C bus, and returns a list of sensor options",|
 |,get_resistance,|,measure resistance between SEN and GND,|
 |,get_high_freq,|,measure high frequencies on IN2 (>100KHz),|
-|,get_freq,|,measure frequency on IN2,|
-|,MeasureInterval,|,timing measurements for digital signals on IN2 or SEN,|
-|,MeasureMultipleDigitalEdges,|,timing measurements for digital signals on IN2 or SEN,|
-|,SinglePinEdges,|,timing measurements for digital signals on IN2 or SEN,|
-|,DoublePinEdges,|,timing measurements for digital signals on IN2 or SEN,|
 |,get_states,|,"get logic level on inputs SEN, IN2",|
 |,get_state,|,"get logic level on inputs SEN, IN2",|
 |,set_state,|,set output state of OD1  / SQ1 / SQ2 / CS1-4/ ,|
-|,stepper_move,|,Stepper motor movement,|
-|,stepper_forward,|,Stepper motor movement,|
-|,stepper_reverse,|,Stepper motor movement,|
-|,set_multiplexer,|,Set CS1-4 to control analog multiplexers . Only on SEElab3,|
-|,duty_cycle,|,measure duty cycle on IN2,|
-|,r2rtime,|,Timing measurements on IN2/SEN. Rising Edge to Rising edge,|
-|,f2ftime,|,Timing measurements on IN2/SEN. Falling Edge to Falling edge,|
-|,r2ftime,|,Timing measurements on IN2/SEN. ,|
-|,f2rtime,|,Timing measurements on IN2/SEN. ,|
-|,multi_r2rtime,|,Timing measurements on IN2/SEN. Multiple rising edges. ,|
-|,set2rtime,|,"Enable an output such as OD1/SQ1, and then measure time to a rising edge on IN2/SEN",|
-|,set2ftime,|,"Enable an output such as OD1/SQ1, and then measure time to a falling edge",|
-|,clr2rtime,|,"Turn off an output such as OD1/SQ1, and then measure time to a rising edge on IN2/SEN",|
-|,clr2ftime,|,"Turn off an output such as OD1/SQ1, and then measure time to a falling edge",|
 
 |,get_temperature,|,measure CPU temperature,|
 |,get_ctmu_voltage,|,-,|

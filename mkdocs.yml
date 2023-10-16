@@ -70,7 +70,7 @@ plugins:
       exclude:
         - programming/intro.md#functions
    - table-reader
-   #- pdf-export
+   - pdf-export
    - with-pdf:
         author: Jithin BP
         #cover: false
@@ -131,6 +131,7 @@ nav:
   - Python - Functions:
       - 'Introduction': 'programming/intro.md'
       - 'Voltage Measurements': 'programming/analog.md'
+      - 'Voltage Outputs': 'programming/analogout.md'
       - 'Waveform Generators': 'programming/waveforms.md'
       - 'Capacitance/Resistance': 'programming/meters.md'
       - 'Digital I/O, Timing': 'programming/digital.md'

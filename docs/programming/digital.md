@@ -68,3 +68,43 @@ Set/Sense logic levels on digital pins SQ1, SQ2, OD1, SEN*, IN2
     <pre><font color="#008700">In [</font><font color="#33DA7A"><b>3</b></font><font color="#008700">]: </font>p.get_state(<font color="#AF5F00">&apos;SEN&apos;</font>)
     <font color="#870000">Out[</font><font color="#F66151"><b>3</b></font><font color="#870000">]: </font>True
     </pre>
+
+
+## Measure Frequencies and time periods
+
+### get_freq : 
+
+Frequency measurement on IN2/SEN
+Measures time taken for 4 rising edges of input signal.
+
+| parameter | description                                       |
+|-----------|---------------------------------------------------|
+| channel   | The input to measure frequency from 'SEN' / 'IN2' |
+| _return_  | freq in Hz. 0 if timed out                        |
+
+
+```python
+p.get_freq('IN2')
+```
+
+
+### Undocumented yet.
+| ,MeasureInterval,             | ,timing measurements for digital signals on IN2 or SEN,                                   |
+|-------------------------------|-------------------------------------------------------------------------------------------|
+| ,MeasureMultipleDigitalEdges, | ,timing measurements for digital signals on IN2 or SEN,                                   |
+| ,SinglePinEdges,              | ,timing measurements for digital signals on IN2 or SEN,                                   |
+| ,DoublePinEdges,              | ,timing measurements for digital signals on IN2 or SEN,                                   |
+| ,stepper_move,                | ,Stepper motor movement,                                                                  |
+| ,stepper_forward,             | ,Stepper motor movement,                                                                  |
+| ,stepper_reverse,             | ,Stepper motor movement,                                                                  |
+| ,set_multiplexer,             | ,Set CS1-4 to control analog multiplexers . Only on SEElab3,                              |
+| ,duty_cycle,                  | ,measure duty cycle on IN2,                                                               |
+| ,r2rtime,                     | ,Timing measurements on IN2/SEN. Rising Edge to Rising edge,                              |
+| ,f2ftime,                     | ,Timing measurements on IN2/SEN. Falling Edge to Falling edge,                            |
+| ,r2ftime,                     | ,Timing measurements on IN2/SEN. ,                                                        |
+| ,f2rtime,                     | ,Timing measurements on IN2/SEN. ,                                                        |
+| ,multi_r2rtime,               | ,Timing measurements on IN2/SEN. Multiple rising edges. ,                                 |
+| ,set2rtime,                   | ,"Enable an output such as OD1/SQ1, and then measure time to a rising edge on IN2/SEN",   |
+| ,set2ftime,                   | ,"Enable an output such as OD1/SQ1, and then measure time to a falling edge",             |
+| ,clr2rtime,                   | ,"Turn off an output such as OD1/SQ1, and then measure time to a rising edge on IN2/SEN", |
+| ,clr2ftime,                   | ,"Turn off an output such as OD1/SQ1, and then measure time to a falling edge",           |

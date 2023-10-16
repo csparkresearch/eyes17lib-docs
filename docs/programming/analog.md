@@ -5,7 +5,6 @@
 
 Reads voltage from specified channel , and returns the value.
 
-
 Autorange is enabled for this function, and it automatically selects the appropriate voltage range if either A1, or A2 are specified
 
 | parameter | description                                         |

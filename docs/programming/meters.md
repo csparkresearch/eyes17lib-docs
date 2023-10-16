@@ -1,9 +1,9 @@
 
-
+![](../images/rc.png)
 
 ## get_resistance
 
-Reads resistance between SEN and GND, and returns
+Measures resistance between SEN and GND, and returns
 
 ```python
 import eyes17.eyes
@@ -15,7 +15,7 @@ print('Resistance between SEN and GND', p.get_resistance())
 
 ## :material-math-norm: get_capacitance : Measure Capacitance 
 
-Reads capacitance between IN1 and GND, and returns the value.
+Measures capacitance between IN1 and GND, and returns the value.
 
 
 
@@ -29,3 +29,6 @@ Reads capacitance between IN1 and GND, and returns the value.
 
 <hr>
 
+!!! info "Additional resources"
+	+ [Measuring Capacitance](https://expeyes.in/experiments/GetStart/measureCAP.html){:target="_blank"} : Measure the capacitance of different types of capacitors. Make a parallel plate capacitor using aluminium foil and measure it.
+	+ [Measuring Resistance](https://expeyes.in/experiments/GetStart/measureRES.html){:target="_blank"} : Measure the resistance of a single resistor and their series and parallel combinations

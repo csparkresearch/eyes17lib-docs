@@ -59,6 +59,10 @@ Out[1]: <eyes17.eyes.Interface at 0x7fef91b95120>
 	will be set to False. After properly connecting, you can either recreate `p`, or call `p.__init__()`
 
 
+[Installation Instructions :material-ray-start-arrow:](installation.md){ .md-button .full-width}
+
+---
+
 ## Graphical Tools and the Android App
 
 The graphical software is available for desktop & Android, making it a portable test and measurement
@@ -79,11 +83,11 @@ By incorporating these test and measurement tools into vocational training curri
 
 The following is a list of links to the ExpEYES.in website where a systematic curriculum based learning experience has been curated. 
 
-+ [Getting Started ](https://expeyes.in/experiments/GetStart/index.html)
-+ [School Level ](https://expeyes.in/experiments/school-level/index.html)
-+ [Electrical ](https://expeyes.in/experiments/electrical/index.html)
-+ [Electronics ](https://expeyes.in/experiments/electronics/index.html)
-+ [Mechanics ](https://expeyes.in/experiments/mechanics/index.html)
-+ [Acoustics ](https://expeyes.in/experiments/sound/index.html)
-+ [Thermal Physics](https://expeyes.in/experiments/thermal/index.html) 
-+ [Add-on Modules](https://expeyes.in/experiments/sensors/index.html) 
++ [Getting Started ](https://expeyes.in/experiments/GetStart/index.html){:target="_blank"}
++ [School Level ](https://expeyes.in/experiments/school-level/index.html){:target="_blank"}
++ [Electrical ](https://expeyes.in/experiments/electrical/index.html){:target="_blank"}
++ [Electronics ](https://expeyes.in/experiments/electronics/index.html){:target="_blank"}
++ [Mechanics ](https://expeyes.in/experiments/mechanics/index.html){:target="_blank"}
++ [Acoustics ](https://expeyes.in/experiments/sound/index.html){:target="_blank"}
++ [Thermal Physics](https://expeyes.in/experiments/thermal/index.html){:target="_blank"}
++ [Add-on Modules](https://expeyes.in/experiments/sensors/index.html){:target="_blank"}

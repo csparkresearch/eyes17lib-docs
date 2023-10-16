@@ -34,8 +34,8 @@ Out[1]: <eyes17.eyes.Interface at 0x7fef91b95120>
 	from eyes17 import eyes
 	p = eyes.open()
 	print(p.get_voltage('A1')
-
 	```
+	![](../images/a1_gnd.png)
 
 
 ---
@@ -47,11 +47,13 @@ Out[1]: <eyes17.eyes.Interface at 0x7fef91b95120>
 [:material-square-wave: Digital](digital.md){ .md-button .secondary}
 [ Sensors](sensors.md){ .md-button }
 
-- [x] [Analog Functions ](analog.md): Voltages, Oscilloscope calls etc
+- [x] [Analog Measurements](analog.md): Voltages, Oscilloscope calls etc
     * [x] Voltage Measurement
     * [x] Capture calls
     * [x] Capture configuration such as trigger, select_range etc
     * [x] Code Examples
+- [x] [Analog Output](analogout.md): Set Voltages
+    * [x] PV1, PV2
 - [x] [Waveform Generators](waveforms.md): configure sine, triangle, square wave outputs 
     * [x] sine wave frequency, amplitude, shape configuration
     * [x] square wave 1,2 frequency, duty_cycle setting.
