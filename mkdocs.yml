@@ -70,34 +70,10 @@ plugins:
       exclude:
         - programming/intro.md#functions
    - table-reader
-   - pdf-export
-   - with-pdf:
-        author: Jithin BP
-        #cover: false
-        cover-logo: images/eyes17-logo.png
-        cover_title: ExpEYES-17 Programmer's Manual
-        cover_subtitle: Also shared with SEELab3
-        toc_title: Contents
-        #heading_shift: false
-        toc_level: 3
-        ordered_chapter_level: 2
-        #excludes_children:
-        #    - 'release-notes/:upgrading'
-        #    - 'release-notes/:changelog'
-        #
-        #exclude_pages:
-        #    - 'bugs/'
-        #    - 'appendix/contribute/'
-        #
-        output_path: pdf/document.pdf
-        enabled_if_env: PDF
-        #
-        #debug_html: true
-        #show_anchors: true
-        #verbose: true  
    - material/social:
       cards: true
       cards_font: Roboto
+   - page-to-pdf
 
 extra:
   palette:

@@ -1,3 +1,13 @@
+/*-- For pdf export -*/
+@page {
+    size: a4 portrait;
+    margin: 25mm 10mm 25mm 10mm;
+    counter-increment: page;
+    @top-right {
+        content: counter(page);
+    }
+}
+
 .md-typeset h1{
   font-weight: bold;
   color: teal;

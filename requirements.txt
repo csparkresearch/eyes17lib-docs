@@ -3,8 +3,7 @@ mkdocs-material[recommended, imaging]
 mkdocs-gen-files
 mkdocs-material-extensions
 mkdocs-table-reader-plugin
-mkdocs-with-pdf
 mkdocs-exclude-search
-mkdocs-pdf-export-plugin
+mkdocs-page-pdf
 pillow
 cairosvg
