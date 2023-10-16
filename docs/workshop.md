@@ -64,7 +64,7 @@ Most of the experiments in this section are part of the B.Sc syllabus. Conventio
 + Half wave rectifier
 + Full wave rectifier
 + Clipping circuit using Diode
-+ Clamping circuit using Diode
++ Clamping circuit using Diode 
 
 ### Session 2. (11:30 AM - 1:00 PM) B.Sc level Experiments
 
@@ -83,3 +83,19 @@ Most of the experiments in this section are part of the B.Sc syllabus. Conventio
 + Distance measurement using VL53LOX LIDAR
 
 ### Session 4. Conclusion and Feedback (3:45 to 4:30)
+
+
+
+### Manual PDFs
+
++ [index](assets/pdfs/index.pdf)
++ [installation](assets/pdfs/installation.pdf)
++ [Analog](assets/pdfs/analog.pdf)
++ [Analog Outputs](assets/pdfs/analogout.pdf)
++ [Waveforms](assets/pdfs/waveforms.pdf)
++ [R, C](assets/pdfs/meters.pdf)
++ [digital](assets/pdfs/digital.pdf)
++ [intro](assets/pdfs/intro.pdf)
++ [i2c sensors](assets/pdfs/sensors.pdf)
++ [workshop](assets/pdfs/workshop.pdf)
+

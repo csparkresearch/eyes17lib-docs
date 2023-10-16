@@ -73,7 +73,7 @@ plugins:
    - material/social:
       cards: true
       cards_font: Roboto
-   - page-to-pdf
+   #- page-to-pdf
 
 extra:
   palette:
