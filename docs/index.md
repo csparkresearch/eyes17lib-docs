@@ -91,3 +91,7 @@ The following is a list of links to the ExpEYES.in website where a systematic cu
 + [Acoustics ](https://expeyes.in/experiments/sound/index.html){:target="_blank"}
 + [Thermal Physics](https://expeyes.in/experiments/thermal/index.html){:target="_blank"}
 + [Add-on Modules](https://expeyes.in/experiments/sensors/index.html){:target="_blank"}
+
+### Sensors
+
+[ADS1115](programming/ADS1115)
