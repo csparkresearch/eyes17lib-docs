@@ -62,7 +62,7 @@ markdown_extensions:
 
 
 extra_css: ["assets/main.css"]
-site_favicon: 'images/favicon.ico'
+site_favicon: 'images/eyes17-logo.png'
 
 plugins:
    - search
@@ -72,7 +72,9 @@ plugins:
    - table-reader
    - material/social:
       cards: true
-      cards_font: Roboto
+      cards_layout_options:
+        background_color: blue # Change background color
+        background_image: images/cover.webp
    #- page-to-pdf
 
 extra:
@@ -89,7 +91,7 @@ google_analytics:
   - 'UA-67472997-4'
   - 'auto'
 
-site_url: https://csparkresearch.in
+site_url: https://eyes17lib.readthedocs.io
 
 extra:
   generator: false
@@ -113,7 +115,7 @@ nav:
       - 'Digital I/O, Timing': 'programming/digital.md'
       - 'I2C and Sensors': 'programming/sensors.md'
   - Projects:
-      - 'R2R DAC Wavegen': 'programming/r2r_wavegen.md'
       - 'Optics: Malus Law': 'malus.md'
+      - 'Thermal Physics: Thermoelectric Coeff': 'thermoelectric.md'
   - APT Workshop Schedule: 'workshop.md'
 
