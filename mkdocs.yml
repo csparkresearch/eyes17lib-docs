@@ -117,5 +117,6 @@ nav:
   - Projects:
       - 'Optics: Malus Law': 'malus.md'
       - 'Thermal Physics: Thermoelectric Coeff': 'thermoelectric.md'
+      - 'Biomedical: Pulse Sensor': 'pulsesensor.md'
   - APT Workshop Schedule: 'workshop.md'
 
