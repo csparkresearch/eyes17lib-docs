@@ -88,6 +88,49 @@ and does not need to be called separately.
 
 <hr>
 
+## Affect of autoranging on acquisition speed 
+
+The `get_voltage` call takes around 30 to 50mS per reading because it tries to calculate the
+appropriate voltage range before making the final measurement. the `get_average_voltage`
+function on the other hand, does not do this, and simply measures voltage based on the last
+set range. So if your voltage range is known, it is possible to get faster readings by using `select_range`
+once to specify the voltage range, and then using `get_average_voltage`.
+
+
+??? abstract "Code Example : A script to compare the performance is below"
+	```python
+	import eyes17.eyes as e
+	import numpy as np
+	import time
+	SAMPLES = 10000
+	p = e.open()
+	dat = np.zeros(SAMPLES)
+	
+	# This will fix the voltmeter range first.
+	p.select_range('A1',4) #[16,8,4,2.5,1.5,1,.5,.25]
+	start_time = time.time()
+	for a in range(SAMPLES):
+		dat[a] = p.get_average_voltage('A1')
+	
+	print(f'Fixed: collected {SAMPLES} datapoints in {time.time()-start_time} Seconds. speed=','%.2f mS'%(1000.*(time.time()-start_time)/SAMPLES))
+	# This will autorange the voltmeter each time. will be slow for large AC signals
+	SAMPLES = 100  #Take smaller number of samples because around 30mS is expected for each reading.
+	start_time = time.time()
+	for a in range(SAMPLES):
+		dat[a] = p.get_voltage('A1')
+	
+	print(f'autoranged: collected {SAMPLES} datapoints in {time.time()-start_time} Seconds. speed=','%.2f mS'%(1000.*(time.time()-start_time)/SAMPLES))
+	```
+
+	Results show 34mS for the autoranging method, and 0.4mS per reading for the normal one.
+	
+	```commandline
+	opened /dev/ttyACM0
+	Fixed: collected 10000 datapoints in 4.83714485168457 Seconds. speed= 0.48 mS
+	autoranged: collected 100 datapoints in 3.556631565093994 Seconds. speed= 35.57 mS	
+	```
+
+
 ## Multiple, Equidistant voltage acquisition: Synchronous routines
 
 These calls initiate an oscilloscope acquisition process, and wait for it
