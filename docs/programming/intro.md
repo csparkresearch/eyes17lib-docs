@@ -46,26 +46,31 @@ Out[1]: <eyes17.eyes.Interface at 0x7fef91b95120>
 [:material-sine-wave: Waveforms ](waveforms.md){ .md-button }
 [:material-square-wave: Digital](digital.md){ .md-button .secondary}
 [ Sensors](sensors.md){ .md-button }
+[ SPI](spi.md){ .md-button .secondary}
 
 - [x] [Analog Measurements](analog.md): Voltages, Oscilloscope calls etc
     * [x] Voltage Measurement
     * [x] Capture calls
+    * [x] `capture_action` (SET_LOW / SET_HIGH / FIRE_PULSE / SET_STATE)
     * [x] Capture configuration such as trigger, select_range etc
     * [x] Code Examples
 - [x] [Analog Output](analogout.md): Set Voltages
-    * [x] PV1, PV2
+    * [x] PV1, PV2 (`set_pv1` / `set_pv2`, `get_pv1` / `get_pv2`)
+    * [x] PCS (`set_pcs` / `get_pcs`, SEELab3) and CCS (`set_state(CCS=…)`, ExpEYES-17)
 - [x] [Waveform Generators](waveforms.md): configure sine, triangle, square wave outputs 
     * [x] sine wave frequency, amplitude, shape configuration
+    * [x] `load_equation` / `load_table` arbitrary waveforms
     * [x] square wave 1,2 frequency, duty_cycle setting.
 - [x] [Digital I/O, Timing](digital.md): Logic Levels, and Timing measurements 
-    * [x] read and set logic levels on digital pins
-    * [ ] timing measurements
+    * [x] read and set logic levels on digital pins (incl. CCS)
+    * [x] frequency, duty cycle, edge timing, counters, SR04, servo
 - [x] [Capacitance, Resistance](meters.md): 
     * [x] Measure Capacitance
     * [x] Measure Resistance
 - [x] [I2C Sensors](sensors.md): Read data from sensors 
     * [x] I2C Function Calls
-    * [ ] Document Sensors
+    * [x] Per-sensor pages (MPU6050, BMP280, TSL2561, …)
+- [x] [SPI Bus](spi.md): `p.SPI` transfers and chip-select
 
 
 The following is an unsorted list. head over to relevant sections for detailed usage docs and examples
@@ -134,7 +139,10 @@ The following is an unsorted list. head over to relevant sections for detailed u
 	| 	set_sq1_dc	                   | 	set the duty cycle of the square wave on SQ1	                                                 |
 	| 	set_sq2_dc	                   | 	set the duty cycle of the square wave on SQ2	                                                 |
 	| 	set_pv1	                      | 	Set the voltage output on PV1 (-5V to 5V)	                                                    |
-	| 	set_pv2	                      | 	Set the voltage output on PV2 (-3V to 3V)	                                                    |
+	| 	set_pv2	                      | 	Set the voltage output on PV2 (−3.3V to 3.3V)	                                               |
+	| 	get_pv1 / get_pv2	             | 	Last set voltage on PV1 / PV2	                                                                |
+	| 	set_pcs / get_pcs	             | 	Programmable current source on SEELab3 (via PV2)	                                            |
+	| 	set_state(CCS=…)	              | 	Enable/disable fixed CCS on ExpEYES-17 (~1.1 mA)	                                             |
 	| 	servo	                        | 	Set the angle of a servo motor connected to SQ1	                                              |
 	| 	sr04_distance	                | 	Measure distance using the SR04 sensor. SQ2→Trig, IN2←ECHO	                                   |
 	| 	sr04_distance_time	           | 	Measure Timestamped distance	                                                                 |
@@ -187,15 +195,10 @@ Access to communication buses such as I2C, SPI are available as submodules of th
 	+ writeBulk
 	+ scan
 
-??? info "SPI : Access the SPI Communication bus"
+??? info "SPI : Access the [SPI Communication bus](spi.md)"
 	+ set_parameters
-	+ start
-	+ set_cs
-	+ stop
-	+ send8
-	+ send16
-	+ send8_burst
-	+ send16_burst
+	+ start / stop / set_cs
+	+ send8 / send16 / send8_burst / send16_burst
 	+ xfer
 	+ map_reference_clock
 

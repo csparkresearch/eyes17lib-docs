@@ -167,80 +167,87 @@ Blocking call that fetches oscilloscope traces from any analog input `A1,A2,A3, 
 <hr>
 
 
-### :material-wrench::material-waveform:  capture_action : Single Channel Oscilloscope with digital state control
+### :material-wrench::material-waveform:  capture_action : Oscilloscope with a digital action
 
-Blocking call that records and returns an oscilloscope trace from the specified input channel after executing another command
-such as SET_LOW,SET_HIGH,FIRE_PULSE etc on SQ1
+`p.capture_action(ch, ns, tg, *args, **kwargs)`
 
-|parameter      |  description  |
-|---------      | -------       |
-|Channel|   Analog input to measure. A1,A2,A3, MIC, SEN, or IN1  |
-|ns             | Number of samples to fetch. Maximum 2500|
-|tg            |  Timegap between samples in microseconds. Minimum 1.75uS|
-| \*args | SET_LOW    : set OD1 low before capture |
-|        | SET_HIGH   : set OD1 high before capture |
-|        | FIRE_PULSE : make a high pulse on OD1 before capture. |
-|        | Use keyword argument pulse_width = x,where x = width of the pulse in uS. default width =10uS |
-|        | Use keyword argument pulse_type = 'high_true' or 'low_true' to decide type of pulse |
-|        | x,y = p.capture_action('A1',2000,1,'FIRE_PULSE',interval = 250) #Output 250uS pulse on OD1 before starting acquisition |
-|        | SET_STATE  : change Digital output immediately after capture starts.|
-|        | Use keyword arguments that will be forwarded to the set_state command |
-| <hr> |
-|return| Arrays X(timestamps in mS),Y(Voltages from chosen input)|
+Blocking single-channel capture at full DMA speed, with an optional digital action on **OD1** (or other outputs via `SET_STATE`) synchronized to the start of acquisition. Ideal for RC/RL step responses and CCS-driven experiments.
 
-??? tip "x,y = p.capture_action('A1',500,10, 'SET_LOW')"
+| parameter | description |
+|-----------|-------------|
+| ch | Analog input: `A1`, `A2`, `A3`, `MIC`, `SEN`, `IN1`, … |
+| ns | Number of samples (max ~10000) |
+| tg | Timegap between samples in µs (min ~0.5 µs) |
+| \*args | Action name (optional): see below |
+| _return_ | `X` (ms), `Y` (V) |
+
+**Actions (`*args`):**
+
+| Action | Effect |
+|--------|--------|
+| `SET_LOW` | Drive OD1 low, then capture |
+| `SET_HIGH` | Drive OD1 high, then capture |
+| `FIRE_PULSE` | Pulse OD1, then capture. Keywords: `pulse_width` (µs, default 10), `pulse_type`=`'high_true'` or `'low_true'` |
+| `SET_STATE` | Call `set_state(**kwargs)` as capture starts (e.g. `CCS=True`, `OD1=False`) |
+
+??? tip "SET_LOW / SET_HIGH"
 	```python
 	import eyes17.eyes
+	from matplotlib import pyplot as plt
 	p = eyes17.eyes.open()
 
-	from matplotlib import pyplot as plt
-	x,y = p.capture_action('A1',2000,1,'SET_LOW') #set OD1 LOW before starting acquisition
-	plot(x,y)
-	show()
-
+	x, y = p.capture_action('A1', 2000, 1, 'SET_LOW')
+	plt.plot(x, y)
+	plt.show()
 	```
 
-??? code " RL Transient Experiment "
+??? tip "FIRE_PULSE on OD1"
+	```python
+	x, y = p.capture_action('A1', 2000, 1, 'FIRE_PULSE', pulse_width=250)
+	```
+
+??? tip "SET_STATE: enable CCS at capture start (ExpEYES-17)"
+	```python
+	# Constant-current charge monitored on A1 (ExpEYES-17 CCS)
+	x, y = p.capture_action('A1', 2000, 1, 'SET_STATE', CCS=True, OD1=False)
+	```
+
+??? code "RL Transient Experiment"
 	```python
 	import eyes17.eyes
-	p = eyes17.eyes.open()
-
 	from matplotlib import pyplot as plt
 	import time
 
+	p = eyes17.eyes.open()
+	plt.plot([0, .5], [0, 0], color='black')
+	plt.ylim([-5, 5])
 
-	plt.plot([0,.5], [0,0], color='black')
-	plt.ylim([-5,5])
-
-
-	p.set_state(OD1=1)			# OD1 to HIGH
+	p.set_state(OD1=1)
 	time.sleep(.5)
-	t,v = p.capture_action('A1', 100, 5, 'SET_LOW')
+	t, v = p.capture_action('A1', 100, 5, 'SET_LOW')
 
-	plt.plot(t,v,linewidth = 2, color = 'red')
+	plt.plot(t, v, linewidth=2, color='red')
 	plt.show()
-
 	```
 
-??? code " RC Transient Experiment "
+??? code "RC Transient Experiment"
 	```python
 	import eyes17.eyes
-	p = eyes17.eyes.open()
 	from matplotlib import pyplot as plt
 	import time
 
-	p.set_state(OD1=0)			# OD1 to LOW
-	time.sleep(.5)
-	t,v = p.capture_action('A1', 100, 5, 'SET_HIGH')
-	plt.plot(t,v,linewidth = 2, color = 'blue')
+	p = eyes17.eyes.open()
 
-	p.set_state(OD1=1)			# OD1 to LOW
+	p.set_state(OD1=0)
 	time.sleep(.5)
-	t,v = p.capture_action('A1', 100, 5, 'SET_LOW')
+	t, v = p.capture_action('A1', 100, 5, 'SET_HIGH')
+	plt.plot(t, v, linewidth=2, color='blue')
 
-	plt.plot(t,v,linewidth = 2, color = 'red')
+	p.set_state(OD1=1)
+	time.sleep(.5)
+	t, v = p.capture_action('A1', 100, 5, 'SET_LOW')
+	plt.plot(t, v, linewidth=2, color='red')
 	plt.show()
-
 	```
 
 <hr>

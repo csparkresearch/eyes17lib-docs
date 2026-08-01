@@ -39,7 +39,8 @@ markdown_extensions:
     - wikilinks
     - codehilite:
         linenums: False
-    - pymdownx.arithmatex
+    - pymdownx.arithmatex:
+        generic: true
     - pymdownx.betterem:
         smart_enable: all
     - pymdownx.caret
@@ -61,7 +62,13 @@ markdown_extensions:
         emoji_generator: !!python/name:material.extensions.emoji.to_svg
 
 
-extra_css: ["assets/main.css"]
+extra_css:
+  - assets/main.css
+  - https://unpkg.com/katex@0/dist/katex.min.css
+extra_javascript:
+  - javascripts/katex.js
+  - https://unpkg.com/katex@0/dist/katex.min.js
+  - https://unpkg.com/katex@0/dist/contrib/auto-render.min.js
 site_favicon: 'images/eyes17-logo.png'
 
 plugins:
@@ -114,9 +121,21 @@ nav:
       - 'Capacitance/Resistance': 'programming/meters.md'
       - 'Digital I/O, Timing': 'programming/digital.md'
       - 'I2C and Sensors': 'programming/sensors.md'
+      - Sensors:
+          - 'MPU6050 Accel/Gyro': 'programming/sensors/mpu6050.md'
+          - 'BMP280 Pressure': 'programming/sensors/bmp280.md'
+          - 'TSL2561 Light': 'programming/sensors/tsl2561.md'
+          - 'HMC5883L Magnetometer': 'programming/sensors/hmc5883l.md'
+          - 'MLX90614 PIR Temp': 'programming/sensors/mlx90614.md'
+          - 'ADS1115 ADC': 'programming/sensors/ads1115.md'
+          - 'MAX30100 Pulse Ox': 'programming/sensors/max30100.md'
+          - 'BH1750 Lux': 'programming/sensors/bh1750.md'
+          - 'VL53L0X Distance': 'programming/sensors/vl53l0x.md'
+      - 'SPI Bus': 'programming/spi.md'
   - Projects:
-      - 'Optics: Malus Law': 'malus.md'
-      - 'Thermal Physics: Thermoelectric Coeff': 'thermoelectric.md'
-      - 'Biomedical: Pulse Sensor': 'pulsesensor.md'
+      - 'Thermal Physics: Thermoelectric Coeff': 'projects/thermoelectric.md'
+      - 'Biomedical: Pulse Sensor': 'projects/pulsesensor.md'
+      - 'Biomedical: Glucometer Study': 'projects/glucometer.md'
+      - 'Optics: Malus Law': 'projects/malus.md'
   - APT Workshop Schedule: 'workshop.md'
 

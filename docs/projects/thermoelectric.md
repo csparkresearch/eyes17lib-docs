@@ -2,7 +2,7 @@
 social:
   cards_layout_options:
     background_color: blue # Change background color
-    background_image: images/thermoelectric/ET Curve.png
+    background_image: /images/thermoelectric/ET Curve.png
 ---
 
 # Thermocouple Sensitivity Measurement using ExpEYES and ADS1115
@@ -102,8 +102,8 @@ Download the "ET_Curve.exe" file and run directly.
 > - Reference_data (i.e, "T-type.dat") and graph ("ET Curve.png") for T-type thermocouple are provided.
 
 ## Experimental Setup and Connections :
-![Experimental_Setup](images/thermoelectric/Experimental Setup.jpeg)
-![Experimental_Connections](images/thermoelectric/Connections for ET Curve.jpeg)
+![Experimental_Setup](/images/thermoelectric/Experimental Setup.jpeg)
+![Experimental_Connections](/images/thermoelectric/Connections for ET Curve.jpeg)
 
 > ## NOTES :
 > - A sample data ('T-type.dat') and the corresponding graph ('ET Curve.png') for the t-type thermocouple are also provided for reference.
@@ -142,7 +142,7 @@ Download the "ET_Curve.exe" file and run directly.
     ```
 
 ## Obtained ET Curve from "T-type.dat" :
-![E T Curve](images/thermoelectric/ET Curve.png)
+![E T Curve](/images/thermoelectric/ET Curve.png)
 
 ## Special thanks to:
 

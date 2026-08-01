@@ -52,41 +52,70 @@ p.set_sine_amp(2) #3.3 V amplitude. +/-3.3V swing
 
 ---
 
-## load_equation : Load an arbitrary shape to WG using an equation
+## load_equation : Load a shape from a function
 
-`p.load_equation(self, function, span=None, **kwargs)`
+`p.load_equation(function, span=None, **kwargs)`
 
-Load an arbitrary or preset waveform to the WG waveform generator output.
+Evaluates `function` over `span` at **512** points, normalizes the result, and uploads it to WG. Then set the playback rate with `set_wave` / `set_sine`.
 
-| parameter | description                                                   |
-|-----------|---------------------------------------------------------------|
-| function  | 'sine' load sine wave                                         |
-|           | 'tria'    triangle wave                                       |
-|           | a python function of the form lambda x:expression(x) |
+| parameter | description |
+|-----------|-------------|
+| function | `'sine'`, `'tria'`, `np.sin`, or any callable `f(x)` |
+| span | `[xmin, xmax]` over which to evaluate (required for custom callables; presets pick their own) |
+| amp | optional keyword (default `0.95`) — scales peak PWM duty (passed through to `load_table`) |
 
 ```python
-p.load_equation('tria') # Changes waveform shape to triangle.
+p.load_equation('tria')          # built-in triangle
+p.load_equation(np.sin, [0, 2 * np.pi])
+p.set_wave(400)
 ```
 
-??? tip "Use a python function: First two terms of the fourier expansion of a square wave"
+??? tip "Fourier approximation of a square wave"
 	```python
+	import numpy as np
 	from matplotlib import pyplot as plt
 	import eyes17.eyes
 	p = eyes17.eyes.open()
-	# Connect WG to A1
-	
-	def f1(x):    # First 2 terms of the fourier expansion of a square wave.
-		return sin(x) + sin(3*x)/3
-	
-	p.load_table(f1,[0,2*np.pi]) #Evaluate from 0 to 2*pi
-	p.set_wave(400) # Set the frequency
-	
-	#Measure the set waveform and study it.
-	x,y = p.capture1('A1', 500,10)
-	plt.plot(x,y)
+	# Connect WG → A1
+
+	def f1(x):
+		return np.sin(x) + np.sin(3 * x) / 3
+
+	p.load_equation(f1, [0, 2 * np.pi])
+	p.set_wave(400)
+
+	x, y = p.capture1('A1', 500, 10)
+	plt.plot(x, y)
 	plt.show()
-	
 	```
+
+---
+
+## load_table : Load 512 raw samples to WG
+
+`p.load_table(points, mode='arbit', **kwargs)`
+
+Upload an arbitrary waveform table. Values are min–max normalized and scaled to the PWM lookup table.
+
+| parameter | description |
+|-----------|-------------|
+| points | Sequence of **exactly 512** samples (any numeric scale; will be normalized) |
+| mode | `'arbit'` (default), `'sine'`, or `'tria'` — stored as `p.WaveType` |
+| amp | Peak scale 0–1 (default `0.95`) |
+
+```python
+import numpy as np
+# Sawtooth
+p.load_table(np.arange(512), mode='arbit')
+p.set_wave(200)
+
+# Custom table from an equation (manual)
+xs = np.linspace(0, 2 * np.pi, 512, endpoint=False)
+p.load_table(np.sin(xs) ** 3, amp=0.9)
+p.set_wave(500)
+```
+
+After loading, use `p.set_wave(freq)` (or `set_sine`) to set how fast the table is scanned. Amplitude of the analog output is still governed by `set_sine_amp` for the WG path.
 
 ---
 

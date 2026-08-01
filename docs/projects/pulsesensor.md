@@ -2,7 +2,7 @@
 social:
   cards_layout_options:
     background_color: blue # Change background color
-    background_image: images/thermoelectric/ET Curve.png
+    background_image: /images/thermoelectric/ET Curve.png
 ---
 
 # Pulse-Rate Measurement with SEELab3
@@ -18,14 +18,14 @@ social:
 This project aims to measure the Human Pulse Rate using pulse sensor (HW-827) and ExpEYES.
 
 ## Experimental Setup
-![Experimental_Setup](images/pulse/Connection.jpg)
+![Experimental_Setup](/images/pulse/Connection.jpg)
 
 
 Place your finger on the sensor, and record the analog output with the data logger app of SEELab3.
 
 # Result:
 
-![Experimental_Setup](images/pulse/Pulse_Rate1.png)
+![Experimental_Setup](/images/pulse/Pulse_Rate1.png)
 
 ### NOTES
 > - Don't forget to delete the existing data file "HR.CSV", if you are running the file multiple times.

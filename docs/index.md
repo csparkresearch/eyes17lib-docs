@@ -17,7 +17,8 @@ Our goal is to make learning both enjoyable and educational. With the combined p
 
 	The various Input/Output terminals function as DC supplies, Voltmeter, Oscilloscope, Function Generator, Frequency Counter etc. The functions of the Terminals are briefly described below.
 
-    + CCS : 1.1 mA Constant Current Source (0 to 1mA programmable for SEElab3)
+    + CCS : 1.1 mA Constant Current Source (**ExpEYES-17**)
+    + PCS : 0–3.3 mA Programmable Current Source (**SEELab3**, via `set_pcs`)
     + PV1 : Programmable Voltage Source (DC supply). Can be set anywhere from -5V to +5V. You may consider it as a DC power supply.
     + PV2 : Similar to PV1 but -3.3V to +3.3V range.
     + SQ1 : A 0 to 5V square wave. Frequency up to 5000 Hz. SQ2 is similar but it is not available when WG is active.
